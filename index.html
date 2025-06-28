@@ -4,546 +4,277 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akshaya Acharya N - Data Scientist Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .header-content h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .header-content p {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 1rem;
-        }
-
-        /* Navigation */
-        nav {
-            background: #2c3e50;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #3498db;
-        }
-
-        /* Main Content */
-        main {
-            padding: 40px 0;
-        }
-
-        section {
-            background: white;
-            margin: 30px 0;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
-
-        h2 {
-            color: #2c3e50;
-            font-size: 2.2rem;
-            margin-bottom: 25px;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
-        }
-
-        h3 {
-            color: #34495e;
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-        }
-
-        /* Professional Summary */
-        .summary-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            text-align: justify;
-        }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-
-        .skill-category {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #3498db;
-        }
-
-        .skill-category h4 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
-        .skill-list {
-            color: #555;
-            line-height: 1.6;
-        }
-
-        /* Experience */
-        .experience-item {
-            margin-bottom: 35px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .experience-item:last-child {
-            border-bottom: none;
-        }
-
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-        }
-
-        .job-title {
-            color: #2c3e50;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-
-        .company {
-            color: #3498db;
-            font-weight: 500;
-            margin-top: 5px;
-        }
-
-        .duration {
-            color: #7f8c8d;
-            font-weight: 500;
-            background: #ecf0f1;
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 0.9rem;
-        }
-
-        .achievements {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .achievements li {
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .achievements li:before {
-            content: "▸";
-            color: #3498db;
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        /* Projects */
-        .project-item {
-            margin-bottom: 35px;
-            padding: 25px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #3498db;
-        }
-
-        .project-title {
-            color: #2c3e50;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .project-description {
-            margin-bottom: 15px;
-            line-height: 1.7;
-            text-align: justify;
-        }
-
-        .tech-stack {
-            background: white;
-            padding: 12px 15px;
-            border-radius: 5px;
-            margin-top: 15px;
-        }
-
-        .tech-stack strong {
-            color: #2c3e50;
-        }
-
-        /* Publications */
-        .publication-item {
-            margin-bottom: 25px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #e74c3c;
-        }
-
-        .publication-title {
-            color: #2c3e50;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .publication-details {
-            color: #555;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .doi-link {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .doi-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Education */
-        .education-item {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #27ae60;
-        }
-
-        .degree {
-            color: #2c3e50;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .university {
-            color: #27ae60;
-            font-weight: 500;
-            margin-bottom: 5px;
-        }
-
-        .year {
-            color: #7f8c8d;
-            font-style: italic;
-        }
-
-        /* Footer */
-        footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 50px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-content h1 {
-                font-size: 2.2rem;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            section {
-                padding: 25px 20px;
-            }
-
-            .job-header {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 15px;
-            }
-
-            .header-content h1 {
-                font-size: 1.8rem;
-            }
-
-            section {
-                padding: 20px 15px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">AA</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#publications" class="nav-link">Publications</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Akshaya Acharya N</h1>
+            <h2 class="hero-subtitle">Data Scientist</h2>
+            <p class="hero-description">
+                Transforming complex data into actionable insights with ML/AI, 
+                Advanced RAG, and Generative AI solutions
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="#projects" class="btn btn-secondary">View Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
         <div class="container">
-            <div class="header-content">
-                <h1>Akshaya Acharya N</h1>
-                <p>Data Scientist | Machine Learning Engineer | AI Specialist</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span>📞</span>
-                        <span>8088858002</span>
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Dedicated and detail-oriented Data Scientist with 3 years of experience in analyzing complex datasets 
+                        to extract meaningful insights and drive business outcomes. Proficient in applying data analysis techniques, 
+                        statistical methods, Machine Learning / Deep Learning models, AI, Advanced RAG and Generative AI to solve 
+                        real-world problems.
+                    </p>
+                    <p>
+                        Adept at managing end-to-end data projects, from data collection and cleaning to model development 
+                        and deployment. Skilled in collaborating with cross-functional teams to design and implement 
+                        data-driven strategies.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <h3>3+</h3>
+                        <p>Years Experience</p>
                     </div>
-                    <div class="contact-item">
-                        <span>✉️</span>
-                        <span>akshaya0500@gmail.com</span>
+                    <div class="stat-card">
+                        <h3>10+</h3>
+                        <p>Projects Completed</p>
                     </div>
-                    <div class="contact-item">
-                        <span>📍</span>
-                        <span>Bengaluru, India</span>
+                    <div class="stat-card">
+                        <h3>2</h3>
+                        <p>Publications</p>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <nav>
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
         <div class="container">
-            <ul>
-                <li><a href="#summary">Summary</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#education">Education</a></li>
-            </ul>
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Sep 2023 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Data Scientist</h3>
+                        <h4>AiSPRY - Bangalore</h4>
+                        <ul>
+                            <li>Conducted in-depth data research and analysis to support project goals, improving data quality and accessibility</li>
+                            <li>Contributed to exploratory data analysis (EDA), uncovering key patterns and trends, and enhanced data workflows by developing ETL pipeline</li>
+                            <li>Involved in designing and developing machine learning and AI models to address diverse business challenges</li>
+                            <li>Collaborated within cross-functional teams to refine and prompt tuning predictive models, improving overall development efficiency by 85%</li>
+                            <li>Documented analytical processes, data sources, and project assumptions to ensure clarity</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">May 2022 - July 2023</div>
+                    <div class="timeline-content">
+                        <h3>Junior Data Scientist</h3>
+                        <h4>TuringMinds.Ai - Bangalore</h4>
+                        <ul>
+                            <li>Led data research efforts, aggregating data from diverse sources to align with project objectives</li>
+                            <li>Improved data accuracy and usability by implementing cleansing techniques, reducing data errors by 45%</li>
+                            <li>Partnered with stakeholders to translate business requirements into actionable analytical insights, driving a 25% improvement in performance metrics</li>
+                            <li>Utilized advanced SQL for data extraction, manipulation, and optimization, achieving a 20% improvement in data retrieval</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-    </nav>
+    </section>
 
-    <main>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
         <div class="container">
-            <section id="summary">
-                <h2>Professional Summary</h2>
-                <p class="summary-text">
-                    Dedicated and detail-oriented Data Scientist with 3 years of experience in analyzing complex datasets to extract meaningful insights and drive business outcomes. Proficient in applying data analysis techniques, statistical methods, Machine Learning / Deep Learning models, AI, Advanced RAG and Generative AI to solve real-world problems. Adept at managing end-to-end data projects, from data collection and cleaning to model development and deployment. Skilled in collaborating with cross-functional teams to design and implement data-driven strategies.
-                </p>
-            </section>
-
-            <section id="skills">
-                <h2>Technical Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>Programming & Database</h4>
-                        <div class="skill-list">Python, SQL, Git, GitHub</div>
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Multi PDF RAG Application</h3>
+                        <span class="project-tag">NLP/LLM</span>
                     </div>
-                    <div class="skill-category">
-                        <h4>Mathematics & Statistics</h4>
-                        <div class="skill-list">Statistics, Probability, Data Analysis</div>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Data Processing</h4>
-                        <div class="skill-list">Data Cleaning, EDA, Data Preparation, Feature Engineering, ETL Pipeline</div>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Machine Learning & AI</h4>
-                        <div class="skill-list">Machine Learning, Deep Learning, NLP, LLM, Generative AI, RAG</div>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Python Libraries</h4>
-                        <div class="skill-list">Pandas, NumPy, Matplotlib, Seaborn, Scikit-Learn, TensorFlow, Hugging Face, spaCy, OpenCV, PySpark</div>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Frameworks & Tools</h4>
-                        <div class="skill-list">LangChain, LlamaIndex, Power BI, AWS (S3, EC2, QuickSight)</div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="experience">
-                <h2>Work Experience</h2>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Data Scientist</div>
-                            <div class="company">AiSPRY — Bangalore</div>
-                        </div>
-                        <div class="duration">Sep 2023 - Present</div>
-                    </div>
-                    <ul class="achievements">
-                        <li>Conducted in-depth data research and analysis to support project goals, improving data quality and accessibility</li>
-                        <li>Contributed to exploratory data analysis (EDA), uncovering key patterns and trends, and enhanced data workflows by developing ETL pipeline</li>
-                        <li>Involved in designing and developing machine learning and AI models to address diverse business challenges, enhancing decision-making and operational efficiency</li>
-                        <li>Collaborated within cross-functional teams to refine and prompt tuning predictive models, improving overall development efficiency by 85%</li>
-                        <li>Documented analytical processes, data sources, and project assumptions to ensure clarity and transparency across teams</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Junior Data Scientist</div>
-                            <div class="company">TuringMinds.Ai — Bangalore</div>
-                        </div>
-                        <div class="duration">May 2022 - July 2023</div>
-                    </div>
-                    <ul class="achievements">
-                        <li>Led data research efforts, aggregating data from diverse sources to align with project objectives</li>
-                        <li>Improved data accuracy and usability by implementing cleansing techniques, reducing data errors by 45%</li>
-                        <li>Partnered with stakeholders to translate business requirements into actionable analytical insights, driving a 25% improvement in performance metrics</li>
-                        <li>Utilized advanced SQL for data extraction, manipulation, and optimization, achieving a 20% improvement in data retrieval and supporting decision-making processes</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="projects">
-                <h2>Featured Projects</h2>
-
-                <div class="project-item">
-                    <h3 class="project-title">Multi PDF RAG Application</h3>
-                    <p class="project-description">
-                        Designed and implemented a Retrieval-Augmented Generation (RAG) approach to address inefficiencies in managing and retrieving information from extensive document repositories. This solution enables users to pose natural language questions and retrieve accurate, relevant content from documents quickly. Leveraging advanced NLP and LLM techniques, the application improves productivity by reducing the time spent on manual searches. Built using a robust technical stack that includes Python, LangChain, NLTK, Tesseract, FAISS for efficient indexing, and Streamlit for an intuitive user interface, the project significantly enhances workflow efficiency and information retrieval accuracy.
-                    </p>
-                    <div class="tech-stack">
-                        <strong>Technical Stack:</strong> Python, FAISS, LangChain, Google Generative AI Embeddings, LangChain Text Splitter
+                    <p>Designed and implemented a Retrieval-Augmented Generation (RAG) approach to manage and retrieve information from extensive document repositories using natural language queries.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>LangChain</span>
+                        <span>FAISS</span>
+                        <span>Streamlit</span>
                     </div>
                 </div>
 
-                <div class="project-item">
-                    <h3 class="project-title">Railways Tender Price Prediction Using Machine Learning and Deep Learning</h3>
-                    <p class="project-description">
-                        Developed a predictive solution to assist clients in securing contracts by offering competitive tender bids. Conducted comprehensive data analysis to identify factors influencing tender prices and implemented clustering techniques to uncover bidding patterns. Leveraged a Feed Forward Neural Network (FFNN) to accurately (87%) predict tender prices, enabling clients to bid competitively without risking overpricing or underpricing. This project improved decision-making, increased the likelihood of contract wins, and is published in IJISRT.
-                    </p>
-                    <div class="tech-stack">
-                        <strong>Technical Stack:</strong> Python, pandas, numpy, scikit-learn, Pipeline, RobustScaler, OneHotEncoder, ColumnTransformer, TensorFlow, Keras, FFNN
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Railways Tender Price Prediction</h3>
+                        <span class="project-tag">ML/DL</span>
+                    </div>
+                    <p>Developed a predictive solution using Feed Forward Neural Network (FFNN) to accurately predict tender prices with 87% accuracy, enabling competitive bidding strategies.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>AWS EC2</span>
+                        <span>Power BI</span>
                     </div>
                 </div>
 
-                <div class="project-item">
-                    <h3 class="project-title">Deep Learning-Based Solar Panel Defect Detection</h3>
-                    <p class="project-description">
-                        Developed a computer vision solution to improve the monitoring and maintenance of large photovoltaic (PV) systems. The project involved data collection and analysis to identify various defects occurring in solar plants. Leveraged drone-captured images to train a model capable of detecting defects with an accuracy of 89.8%, enabling faster and more accurate defect identification. This streamlined the maintenance process, reduced manual errors, and optimized resource utilization.
-                    </p>
-                    <div class="tech-stack">
-                        <strong>Technical Stack:</strong> Python, YOLO, PyTorch, TensorFlow, Roboflow, Streamlit
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Solar Panel Defect Detection</h3>
+                        <span class="project-tag">Computer Vision</span>
+                    </div>
+                    <p>Built a computer vision solution using drone-captured images to detect defects in solar panels with 89.8% accuracy, streamlining maintenance processes.</p>
+                    <div class="project-tech">
+                        <span>YOLO</span>
+                        <span>PyTorch</span>
+                        <span>TensorFlow</span>
+                        <span>Roboflow</span>
                     </div>
                 </div>
 
-                <div class="project-item">
-                    <h3 class="project-title">Dynamic Data Visualization and Analysis Chatbot for CXOs</h3>
-                    <p class="project-description">
-                        Developed a CXO chatbot for a leading beverage company in Uttar Pradesh to address inefficiencies in retrieving insights from extensive CSV files. The chatbot integrates advanced technologies, including Gemini 2.0 Flash, GPT-4, DeepSeek R1, and CSV Agent, to provide rapid and accurate information retrieval. It enables CXOs to interact with data conversationally, generate insightful visualizations dynamically within the chatbot, and make informed decisions faster.
-                    </p>
-                    <div class="tech-stack">
-                        <strong>Technical Stack:</strong> Python, Google Generative AI (Gemini), PandasAI, Groq, LLaMA, FAISS, LangChain Prompt Engineering
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>CXO Data Analysis Chatbot</h3>
+                        <span class="project-tag">GenAI</span>
+                    </div>
+                    <p>Developed an intelligent chatbot for C-level executives to interact with CSV data conversationally and generate dynamic visualizations for informed decision-making.</p>
+                    <div class="project-tech">
+                        <span>Gemini</span>
+                        <span>GPT-4</span>
+                        <span>LangChain</span>
+                        <span>PandasAI</span>
                     </div>
                 </div>
-            </section>
-
-            <section id="publications">
-                <h2>Publications</h2>
-
-                <div class="publication-item">
-                    <div class="publication-title">Railways Tender Price Prediction Using Machine Learning and Deep Learning Algorithms</div>
-                    <div class="publication-details">
-                        <strong>Authors:</strong> E Pavan Kumar, Kuzhalini Sivanandam, Akshaya Acharya, Sandeep Kumar Giri, Bharani Kumar Depuru<br>
-                        <strong>Journal:</strong> IJISRT - Volume 9, Issue 7, July 2024<br>
-                        <strong>DOI:</strong> <a href="https://doi.org/10.38124/ijisrt/IJISRT24JUL1725" class="doi-link" target="_blank">https://doi.org/10.38124/ijisrt/IJISRT24JUL1725</a>
-                    </div>
-                </div>
-
-                <div class="publication-item">
-                    <div class="publication-title">A Deep Learning-Based Approach for Identifying Defects in Solar Panels</div>
-                    <div class="publication-details">
-                        <strong>Authors:</strong> Harisree Haridas, Hruday Reddy K, Jahnavi P, Lochana B, Akshaya Acharya, Deba Chandan Mohanty, Bharani Kumar Depuru<br>
-                        <strong>Journal:</strong> IJISRT - Volume 9, Issue 9, September 2024<br>
-                        <strong>DOI:</strong> <a href="https://doi.org/10.38124/ijisrt/IJISRT24SEP309" class="doi-link" target="_blank">https://doi.org/10.38124/ijisrt/IJISRT24SEP309</a>
-                    </div>
-                </div>
-            </section>
-
-            <section id="education">
-                <h2>Education</h2>
-                <div class="education-item">
-                    <div class="degree">Bachelor of Engineering in Mechanical Engineering</div>
-                    <div class="university">Visvesvaraya Technological University (VTU), Belgaum</div>
-                    <div class="year">2019 – 2022</div>
-                </div>
-            </section>
+            </div>
         </div>
-    </main>
+    </section>
 
-    <footer>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
         <div class="container">
-            <p>&copy; 2025 Akshaya Acharya N. All rights reserved.</p>
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages & Tools</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Power BI</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>ML/DL Frameworks</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Scikit-Learn</span>
+                        <span class="skill-tag">Keras</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>GenAI & LLM</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">LlamaIndex</span>
+                        <span class="skill-tag">Hugging Face</span>
+                        <span class="skill-tag">RAG</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Cloud & Data</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">AWS S3</span>
+                        <span class="skill-tag">AWS EC2</span>
+                        <span class="skill-tag">ETL Pipelines</span>
+                        <span class="skill-tag">QuickSight</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="publications">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+            <div class="publication-list">
+                <div class="publication-item">
+                    <h3>Railways Tender Price Prediction Using Machine Learning and Deep Learning Algorithms</h3>
+                    <p class="publication-authors">E Pavan Kumar, Kuzhalini Sivanandam, Akshay Acharya, et al.</p>
+                    <p class="publication-details">IJISRT - Volume 9, Issue 7, July 2024</p>
+                    <a href="https://doi.org/10.38124/ijisrt/IJISRT24JUL1725" target="_blank" class="publication-link">View Publication →</a>
+                </div>
+                <div class="publication-item">
+                    <h3>A Deep Learning-Based Approach for Identifying Defects in Solar Panels</h3>
+                    <p class="publication-authors">Harisree Haridas, Hruday Reddy K, Jahnavi P, Lochana B, Akshaya Acharya, et al.</p>
+                    <p class="publication-details">IJISRT - Volume 9, Issue 9, September 2024</p>
+                    <a href="https://doi.org/10.38124/ijisrt/IJISRT24SEP309" target="_blank" class="publication-link">View Publication →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <p>I'm always interested in discussing new opportunities and innovative data science projects.</p>
+                <div class="contact-info">
+                    <a href="mailto:akshaya0500@gmail.com" class="contact-item">
+                        <span>📧</span> akshaya0500@gmail.com
+                    </a>
+                    <a href="tel:+918088858002" class="contact-item">
+                        <span>📱</span> +91 8088858002
+                    </a>
+                    <div class="contact-item">
+                        <span>📍</span> Bengaluru, India
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Akshaya Acharya N. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
